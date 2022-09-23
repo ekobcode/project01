@@ -1,0 +1,11 @@
+ketik command
+docker logs jenkins | less
+
+
+
+Jenkins initial setup is required. An admin user has been created and a password generated.
+Please use the following password to proceed to installation:
+
+5156d3bd61a940aabd603976c24dd2bb
+
+This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
