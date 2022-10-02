@@ -32,7 +32,7 @@ services:
       apisix:
 
   etcd:
-    container_name: etcd_apisix
+    container_name: apisix_etcd
     image: bitnami/etcd:3.4.15
     restart: always
     volumes:
