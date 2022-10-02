@@ -2,7 +2,12 @@ global:
   scrape_interval: 1m
 
 scrape_configs:
-  - job_name: "prometheus"
-    scrape_interval: 1m
+  # - job_name: "prometheus"
+  #   scrape_interval: 1m
+  #   static_configs:
+  #   - targets: ["localhost:9090"]
+  - job_name: "apisix"
+    scrape_interval: 15s # This value will be related to the time range of the rate function in Prometheus QL. The time range in the rate function should be at least twice this value.
+    metrics_path: "/apisix/prometheus/metrics"
     static_configs:
-    - targets: ["localhost:9090"]
+      - targets: ["127.0.0.1:9091"]
