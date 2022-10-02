@@ -14,3 +14,6 @@ cd ..
 
 cd portainer
 docker-compose up -d
+
+cd apisix
+docker-compose up -d
