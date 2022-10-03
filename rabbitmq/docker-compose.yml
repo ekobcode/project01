@@ -17,11 +17,11 @@ services:
         - RABBITMQ_DEFAULT_PASS=dev123#!
     ports:
         # AMQP protocol port
-        - '5672:5672'
+        - 5672:5672
         # HTTP management UI
-        - '15672:15672'
+        - 15672:15672
         # Prometheus
-        - '15692:15692'
+        - 15692:15692
     volumes:
         - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
         - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
