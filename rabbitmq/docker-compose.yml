@@ -1,0 +1,29 @@
+version: '3.8'
+
+networks:
+  monitoring:
+    driver: bridge
+
+volumes:
+  rabbitmq:
+
+services:
+  rabbitmq:
+    container_name: "rabbitmq"
+    image: rabbitmq:3.10-management
+    restart: unless-stopped
+    environment:
+        - RABBITMQ_DEFAULT_USER=dev
+        - RABBITMQ_DEFAULT_PASS=dev123#!
+    ports:
+        # AMQP protocol port
+        - '5672:5672'
+        # HTTP management UI
+        - '15672:15672'
+        # Prometheus
+        - '15692:15692'
+    volumes:
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+      - monitoring
